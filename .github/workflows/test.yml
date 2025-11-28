@@ -100,6 +100,7 @@ jobs:
       
       - name: Run ${{ matrix.scenario.name }} tests
         run: pytest -v -m "${{ matrix.scenario.marker }}"
+      
   deploy:
     name: Deploy to Production
     needs: [lint, test]
