@@ -3,11 +3,13 @@
 import pytest
 from calculator import add, subtract, multiply, divide, power
 
+
 def test_add():
     """Test addition function."""
     assert add(2, 3) == 5
     assert add(-1, 1) == 0
     assert add(0, 0) == 0
+
 
 def test_subtract():
     """Test subtraction function."""
@@ -15,11 +17,13 @@ def test_subtract():
     assert subtract(0, 5) == -5
     assert subtract(-3, -2) == -1
 
+
 def test_multiply():
     """Test multiplication function."""
     assert multiply(3, 4) == 12
     assert multiply(-2, 3) == -6
     assert multiply(0, 5) == 0
+
 
 def test_divide():
     """Test division function."""
@@ -27,15 +31,17 @@ def test_divide():
     assert divide(9, 3) == 3
     assert divide(-10, 2) == -5
 
+
 @pytest.mark.edge
 def test_divide_by_zero():
     """Test that dividing by zero raises an error."""
     with pytest.raises(ValueError):
         divide(10, 0)
 
+
 @pytest.mark.slow
 def test_power():
     """Test power function"""
     assert power(2, 4) == 16
-    assert power(0,100) == 0
+    assert power(0, 100) == 0
     assert power(1, 23) == 1
